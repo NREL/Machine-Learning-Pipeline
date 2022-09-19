@@ -11,13 +11,17 @@ classdef Pipeline
     %   and the model will be stored in Model.
     
     properties %In future/if time look at removing data from pipeline class properties
-        X           % x data table
+        X           % X data table
+        X_Train     % X training set
+        X_Test      % X test set
         FeatureEngineeredX %Largest x data table
         TransformMethod %Method for normalization
         TransformMean %Mean of Z-score normalization
         TransformSd %Standard deviation of Z-score normalization
         FeatureSelectedX %Reduced x data table
         y           % y data table
+        y_Train     % y training set
+        y_Test      % y test set
         ypred       % y predicted array
         FE_Coefs    % Coefficients for the Feature Engineering Process
         FS_Coefs    % Coefficients for the Feature Selection Process
@@ -45,8 +49,10 @@ classdef Pipeline
             obj.Fit_Algorithm = [];
             obj.Model = [];
         end
+        %Load and Split Data:
+        obj = loadData(obj, Filename, varargin)
         %Perform Feature Engineering:
-        obj = featureEngineering(X, y, varargin);
+        obj = featureEngineering(X, varargin);
         %Perform Feature Selection:
         obj = featureSelection(FeatureEngineeredX, y, varargin);
         % Create and optimize a model:

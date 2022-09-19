@@ -1,27 +1,23 @@
 %%% Copyright (c) 2022 Alliance for Sustainable Energy, LLC
 %%% Andrew Schiek 2022
 
-function obj = featureEngineering(obj, X, y, varargin)
+function obj = featureEngineering(obj, X, varargin)
 %FEATUREENGINEERING performs feature engineering on X and returns a larger
 %FeatureEngineeredX.
-%   [FeatureEngineeredX, coef, explained] = FEATUREENGINEERING(X,y)
+%   [FeatureEngineeredX, coef, explained] = FEATUREENGINEERING(X)
 %   The user can specify which feature engineering algorithm they would
 %   like to use, otherwise it will default to no feature engineering
 %   algorithm. The user can also specify if they would like to normalize
 %   the data or not and if they want it to be a Z-score or Min-Max
 %   normalization. Using the feature engineering algorithm selected this
 %   function will return an Engineered Features set that consists of the
-%   new features on the end of the original features. This is the first
-%   step in the Pipeline algorithm.
+%   new features on the end of the original features. This is the second
+%   step in the Pipeline algorithm, and loadData should be run first.
 %   Inputs:
-%       X: Table or array of features
-%       y: Arrary of dependent variable
+%       X: Array of features
 %   Outputs:
 %       FeatureEngineeredX: An array of additional engineered features
-    
-    %Set the original predictors and dependent variables
-    obj.X = X;
-    obj.y = y;
+
     %Get Normalization Method
     maskNorm = strcmp(varargin, 'Normalization');
     isNormSpecified = any(maskNorm);
