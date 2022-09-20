@@ -1,5 +1,8 @@
 %%% Copyright (c) 2022 Alliance for Sustainable Energy, LLC
 %%% Andrew Schiek 2022
+%%% Data being loaded has been processed from the publicly available dataset
+%%% in "Data-driven prediction of battery cycle life before capacity 
+%%% degradation" by Severson et al. 
 
 function obj = loadData(obj, Filename, varargin)
 %LOADDATA loads in a data set stored in Filename and splits the data into
