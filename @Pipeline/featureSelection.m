@@ -1,5 +1,4 @@
 %%% Copyright (c) 2022 Alliance for Sustainable Energy, LLC
-%%% Andrew Schiek 2022
 
 function obj = featureSelection(obj,FeatureEngineeredX, y, varargin)
 %FEATURESELECTION performs feature selection on FeatureEngineeredX and returns the reduced X
