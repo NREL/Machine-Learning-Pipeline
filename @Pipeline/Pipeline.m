@@ -1,5 +1,4 @@
 %%% Copyright (c) 2022 Alliance for Sustainable Energy, LLC
-%%% Andrew Schiek 2022
 
 classdef Pipeline
     %Pipline Automates the process of predicting state of health through a ML pipeline.
