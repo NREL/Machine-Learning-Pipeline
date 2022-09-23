@@ -1,5 +1,4 @@
 %%% Copyright (c) 2022 Alliance for Sustainable Energy, LLC
-%%% Andrew Schiek 2022
 
 function obj = featureEngineering(obj, X, varargin)
 %FEATUREENGINEERING performs feature engineering on X and returns a larger
