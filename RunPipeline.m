@@ -1,5 +1,4 @@
 %%% Copyright (c) 2022 Alliance for Sustainable Energy, LLC
-%%% Andrew Schiek 2022
 
 close all; clear all;
 addpath('Data')
