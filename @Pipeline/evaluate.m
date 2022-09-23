@@ -1,5 +1,4 @@
 %%% Copyright (c) 2022 Alliance for Sustainable Energy, LLC
-%%% Andrew Schiek 2022
 
 function FitResult = evaluate(obj, X, y, varargin)
 %EVALUATE tests the model or refits a model to a test and returns FitResult
