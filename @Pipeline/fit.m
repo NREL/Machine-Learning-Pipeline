@@ -1,5 +1,4 @@
 %%% Copyright (c) 2022 Alliance for Sustainable Energy, LLC
-%%% Andrew Schiek 2022
 
 function [obj, FitResult] = fit(obj, FeatureSelectedX, y, varargin)
 %FIT fits X to y and returns the predicted y values and the FitResult
