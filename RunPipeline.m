@@ -6,7 +6,7 @@ addpath('Data')
 %Create Pipeline Class called pipe
 pipe = Pipeline();
 %Load Dataset and split with a 20% test set
-pipe = pipe.loadData('MIT_Variables.mat', 'TestTrainSplit', 'Percentage', 'TestPercent', 0.2);
+pipe = pipe.loadData('MIT_Variables.mat', 'DependentVariable', 'SOH', 'TestTrainSplit', 'Percentage', 'TestPercent', 0.2);
 %Run Feature Engineering
 pipe = pipe.featureEngineering(pipe.X_Train, 'Normalization', 'Z', 'FeatureEngineeringAlgorithm', 'PCA');
 %Run Feature Selection

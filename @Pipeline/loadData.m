@@ -31,7 +31,24 @@ function obj = loadData(obj, Filename, varargin)
     %Set the original Data X and y
     obj.X = X;
     obj.y = y;
-
+    
+    %Check if y is SOH and if so drop outliers (SOH>1.10)
+    maskDependent = strcmp(varargin, 'DependentVariable');
+    isDependentSpecified = any(maskDependent);
+    
+    if isDependentSpecified
+        maskDependentValue = logical([0 maskDependent]);
+        DependentValue = varargin{maskDependentValue};
+        
+        if contains(DependentValue, 'SOH')
+            idx = find(y > 1.1);
+            if idx
+                y(idx,:) = [];
+                X(idx,:) = [];
+            end
+        end
+    end
+            
     %Get Normalization Method
     maskSplit = strcmp(varargin, 'TestTrainSplit');
     isSplitSpecified = any(maskSplit);
